@@ -1,0 +1,194 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code", "Courier New", monospace; /* Coding style font */
+}
+
+/* Body with animated gradient background */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d0d0d;
+  overflow: hidden;
+  color: #f5f5f5;
+}
+
+/* Background floating circles */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,200,0.3) 0%, transparent 70%);
+  animation: float 20s infinite linear;
+  border-radius: 50%;
+  z-index: 0;
+}
+body::after {
+  width: 400px;
+  height: 400px;
+  left: 60%;
+  top: 20%;
+  background: radial-gradient(circle, rgba(0,150,255,0.3) 0%, transparent 70%);
+  animation: float2 25s infinite linear;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translate(-50%, -50%) rotate(0deg); top: 10%; left: 10%; }
+  50% { transform: translate(-50%, -50%) rotate(180deg); top: 50%; left: 70%; }
+  100% { transform: translate(-50%, -50%) rotate(360deg); top: 10%; left: 10%; }
+}
+@keyframes float2 {
+  0% { transform: translate(-50%, -50%) rotate(0deg); top: 70%; left: 80%; }
+  50% { transform: translate(-50%, -50%) rotate(180deg); top: 20%; left: 30%; }
+  100% { transform: translate(-50%, -50%) rotate(360deg); top: 70%; left: 80%; }
+}
+
+/* Main wrapper box */
+.wrapper {
+  position: relative;
+  z-index: 10;
+  background: rgba(20, 20, 20, 0.85);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.4), 0 0 50px rgba(0, 255, 150, 0.2);
+  backdrop-filter: blur(12px);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* Fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.first h1 {
+  font-size: 1.5rem;
+  color: #00ffc6;
+  text-shadow: 0 0 10px #00ffc6, 0 0 20px #00ffa6;
+  word-wrap: break-word;
+}
+
+/* Copy Icon */
+.first i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.first i:hover {
+  color: #00ffc6;
+  transform: scale(1.2);
+}
+
+/* Range slider */
+.second {
+  margin: 1.5rem 0;
+}
+#range {
+  width: 100%;
+  accent-color: #00ffc6;
+  cursor: pointer;
+}
+#rangeval {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* Checkboxes */
+.third {
+  text-align: left;
+  margin: 1rem 0;
+}
+.third label {
+  margin-left: 5px;
+  color: #eee;
+  transition: 0.3s;
+}
+.third input {
+  accent-color: #00ffc6;
+  cursor: pointer;
+}
+.third input:checked + label {
+  color: #00ffc6;
+  text-shadow: 0 0 8px #00ffc6;
+}
+
+/* Strength text */
+#strengthVal {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #ff4444;
+  transition: 0.3s;
+}
+
+/* Generate button */
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #00ffc6;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffc6, 0 0 20px #00ffa6;
+}
+button:hover {
+  background: #0d7377;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffc6, 0 0 40px #00ffa6;
+}
+
+
+
+/* Password + Copy button container */
+.first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Title / Password text */
+.first h1 {
+  font-size: 1.5rem;
+  color: #00ffc6;
+  text-shadow: 0 0 10px #00ffc6, 0 0 20px #00ffa6;
+  word-wrap: break-word;
+  flex: 1; /* makes h1 shrink if text is long */
+}
+
+/* Copy Icon */
+.first i {
+  font-size: 1.2rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: auto; /* pushes it neatly to the right */
+}
+.first i:hover {
+  color: #00ffc6;
+  transform: scale(1.2);
+}
+
+/* Above 75% style */
+.strongStrength {
+  color: #edb244 !important; /* neon teal/green */
+  text-shadow: 0 0 8px #ea3e0e, 0 0 16px #9f2d84, 0 0 24px #4b30e2;
+  font-weight: bold;
+}

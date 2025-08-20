@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+    <div class="wrapper">
+
+       <div class="first">
+         <h1 id="strong">Password Generator</h1>
+         <i class="fa-solid fa-copy" id="copypass"></i>
+       </div>
+
+       <div class="second">
+        <input type="range" name="variation" id="range" min="1" max="16" value="0">
+        <p id="rangeval">16</p>
+       </div>
+
+
+        <div class="third">
+            <input type="checkbox" name="capslatter" id="capital">
+            <label for="capital">Need Uppercase Letter</label>
+            <br>
+            <input type="checkbox" name="smalllatter" id="small">
+            <label for="small">Need Lowercase Letter</label>
+            <br>
+            <input type="checkbox" name="special" id="symbol">
+            <label for="symbol">Need Special Symbol</label>
+            <br>
+            <input type="checkbox" name="number" id="number">
+            <label for="number">Need number</label>
+    </div>
+          <p id="strengthVal">Strength: 0%</p> 
+
+        <button type="submit" id="Generate">Generate Password</button>
+
+
+    </div>
+    
+
+
+    <script src="index.js"></script>
+</body>
+</html>
